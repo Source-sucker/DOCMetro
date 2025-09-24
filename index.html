@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMetro: Taming Document Overload at KMRL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #FFA500;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0047AB] mb-2">The Silent Productivity Tax</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Kochi Metro Rail Limited (KMRL) generates thousands of documents daily, creating a significant and growing operational burden.</p>
+        </header>
+
+        <main>
+            <section id="challenge" class="mb-16">
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#0047AB] mb-6">A Flood of Information</h2>
+                    <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">From engineering blueprints to safety circulars, KMRL handles a vast and diverse array of documents from numerous sources. This sheer volume slows down decision-making and creates information silos between departments, impacting efficiency and compliance.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-center mb-4">The Daily Document Deluge</h3>
+                            <p class="text-gray-600 mb-6">The variety of documents creates complexity. Critical data for one department may be buried within a lengthy report from another, leading to missed insights and duplicated work. This chart illustrates the composition of the document types received and generated daily.</p>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center"><span class="text-[#FFA500] text-xl mr-3">●</span> Technical & Maintenance Records</li>
+                                <li class="flex items-center"><span class="text-[#008080] text-xl mr-3">●</span> Operational & Incident Reports</li>
+                                <li class="flex items-center"><span class="text-[#0047AB] text-xl mr-3">●</span> Financial & Procurement Docs</li>
+                                <li class="flex items-center"><span class="text-gray-400 text-xl mr-3">●</span> HR, Legal & Regulatory Filings</li>
+                            </ul>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="documentTypesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution" class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-[#0047AB] mb-6">The Solution: DocuMetro's AI Core</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">DocuMetro acts as a sentient digital twin for KMRL. It ingests, understands, and contextualizes all information streams, providing every stakeholder with precisely the intelligence they need, proactively and instantly.</p>
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row items-center justify-around text-center">
+                        <div class="p-4 flex-1">
+                            <div class="text-4xl mb-4">📥</div>
+                            <h3 class="text-xl font-bold mb-2">Ingest & Understand</h3>
+                            <p class="text-gray-600">Gathers data from all sources in English, Malayalam, and Manglish.</p>
+                        </div>
+                        <div class="flow-arrow hidden md:block">&rarr;</div>
+                        <div class="flow-arrow md:hidden my-4">&darr;</div>
+                        <div class="p-4 flex-1">
+                            <div class="text-4xl mb-4">🧠</div>
+                            <h3 class="text-xl font-bold mb-2">AI Analysis & Synthesis</h3>
+                            <p class="text-gray-600">Extracts key insights, detects risks, and finds hidden connections.</p>
+                        </div>
+                        <div class="flow-arrow hidden md:block">&rarr;</div>
+                        <div class="flow-arrow md:hidden my-4">&darr;</div>
+                        <div class="p-4 flex-1">
+                            <div class="text-4xl mb-4">🚀</div>
+                            <h3 class="text-xl font-bold mb-2">Proactive Delivery</h3>
+                            <p class="text-gray-600">Delivers summaries, alerts, and predictions to the right people.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advantage" class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-[#0047AB] mb-8">A Unique Advantage for a Modern Metro</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <div class="text-4xl mb-4">🔮</div>
+                        <h3 class="text-xl font-bold mb-2">Cognitive Simulation</h3>
+                        <p class="text-gray-600">Test the impact of future decisions today by simulating scenarios based on all available data.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <div class="text-4xl mb-4">✅</div>
+                        <h3 class="text-xl font-bold mb-2">Autonomous Decision-Making</h3>
+                        <p class="text-gray-600">The AI handles routine analysis, freeing up human experts to focus on strategic initiatives.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2">Temporal Knowledge</h3>
+                        <p class="text-gray-600">Understands the context of time, connecting past incidents to present risks and future needs.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold mb-2">Proactive Delivery</h3>
+                        <p class="text-gray-600">Anticipates your information needs and delivers insights before you even have to ask.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="impact" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-[#0047AB] mb-6">Transformative Impact Across KMRL</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">By automating information synthesis, DocuMetro delivers measurable improvements in efficiency, safety, and decision-making, benefiting everyone from front-line staff to passengers.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-center mb-4">Boosting Key Performance Indicators</h3>
+                        <p class="text-gray-600 mb-6">The shift from reactive data hunting to proactive, AI-driven insights creates a step-change in performance. This radar chart contrasts key operational metrics before and after the implementation of DocuMetro, showing significant gains across the board.</p>
+                        <div class="chart-container" style="height: 320px; max-height: 450px;">
+                            <canvas id="kpiImpactChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                         <h3 class="text-xl font-bold text-center mb-4">Holistic Organizational Benefits</h3>
+                         <p class="text-gray-600 mb-6">The benefits extend beyond simple efficiency gains, creating a positive feedback loop of social, economic, and environmental improvements that strengthen KMRL's strategic position as an industry innovator.</p>
+                        <div class="chart-container" style="height: 320px; max-height: 450px;">
+                            <canvas id="benefitsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+            <p class="text-gray-500">DocuMetro: Powering the Future of Smart Urban Transit at KMRL.</p>
+        </footer>
+    </div>
+
+<script>
+    function wrapLabels(label, maxLength) {
+        if (typeof label !== 'string' || label.length <= maxLength) {
+            return label;
+        }
+        const words = label.split(' ');
+        let lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+            if ((currentLine + word).length > maxLength) {
+                lines.push(currentLine.trim());
+                currentLine = '';
+            }
+            currentLine += word + ' ';
+        });
+        lines.push(currentLine.trim());
+        return lines.filter(line => line.length > 0);
+    }
+
+    const defaultTooltipCallback = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                          return label.join(' ');
+                        } else {
+                          return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    const documentTypesCtx = document.getElementById('documentTypesChart').getContext('2d');
+    new Chart(documentTypesCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Technical & Maintenance', 'Operational & Incident', 'Financial & Procurement', 'HR, Legal & Regulatory'],
+            datasets: [{
+                label: 'Document Volume',
+                data: [40, 25, 20, 15],
+                backgroundColor: ['#FFA500', '#008080', '#0047AB', '#A9A9A9'],
+                borderColor: '#F5F5F5',
+                borderWidth: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                ...defaultTooltipCallback.plugins,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 20,
+                        padding: 20
+                    }
+                }
+            },
+            cutout: '60%'
+        }
+    });
+
+    const kpiImpactCtx = document.getElementById('kpiImpactChart').getContext('2d');
+    const kpiLabels = ['Decision Speed', 'Service Reliability', 'Safety Compliance', 'Cost Efficiency', 'Knowledge Retention'];
+    new Chart(kpiImpactCtx, {
+        type: 'radar',
+        data: {
+            labels: kpiLabels.map(label => wrapLabels(label, 16)),
+            datasets: [{
+                label: 'Before DocuMetro',
+                data: [3, 6, 7, 4, 2],
+                backgroundColor: 'rgba(255, 165, 0, 0.2)',
+                borderColor: '#FFA500',
+                pointBackgroundColor: '#FFA500',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#FFA500'
+            }, {
+                label: 'After DocuMetro',
+                data: [9, 8, 9, 8, 9],
+                backgroundColor: 'rgba(0, 71, 171, 0.2)',
+                borderColor: '#0047AB',
+                pointBackgroundColor: '#0047AB',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#0047AB'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                ...defaultTooltipCallback.plugins,
+                legend: {
+                    position: 'bottom',
+                }
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        color: '#ddd'
+                    },
+                    grid: {
+                        color: '#ddd'
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 11
+                        },
+                        color: '#333'
+                    },
+                    ticks: {
+                        backdropColor: 'transparent',
+                        stepSize: 2
+                    },
+                    min: 0,
+                    max: 10
+                }
+            }
+        }
+    });
+
+    const benefitsCtx = document.getElementById('benefitsChart').getContext('2d');
+    new Chart(benefitsCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Economic', 'Social', 'Strategic', 'Environmental'],
+            datasets: [{
+                data: [35, 25, 25, 15],
+                backgroundColor: ['#0047AB', '#008080', '#FFA500', '#A9A9A9'],
+                borderColor: '#F5F5F5',
+                borderWidth: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                ...defaultTooltipCallback.plugins,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 20,
+                        padding: 20
+                    }
+                },
+                 title: {
+                    display: false,
+                    text: 'Holistic Organizational Benefits'
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
